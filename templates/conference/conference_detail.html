@@ -6,3 +6,4 @@
 <p>Topics: {{ conference.topics }}</p>
 <!-- Add more details as required -->
 <a href="{% url 'conference:conference_update' conference.id %}" class="update-link">Update</a>
+<a href="{% url 'conference:conference_delete' conference.id %}" class="delete-link">delete</a>
