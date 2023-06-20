@@ -1,0 +1,8 @@
+<!-- conference/templates/conference/conference_list.html -->
+<h1>Conference List</h1>
+<ul>
+    {% for conference in conferences %}
+    <li>{{ conference.name }} - {{ conference.dates }} - {{ conference.location }}</li>
+    <hr>
+    {% endfor %}
+</ul>
