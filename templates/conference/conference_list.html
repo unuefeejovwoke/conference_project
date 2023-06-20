@@ -1,4 +1,20 @@
 <!-- conference/templates/conference/conference_list.html -->
+<style>
+    /* CSS Stylesheet */
+.create-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.create-button:hover {
+  background-color: #45a049;
+}
+
+</style>
 <h1>Conference List</h1>
 <ul>
     {% for conference in conferences %}
@@ -7,4 +23,7 @@
     </a>
     <hr>
     {% endfor %}
+
 </ul>
+
+<a href="{% url 'conference:conference_create' %}" class="create-button">Create Conference</a>

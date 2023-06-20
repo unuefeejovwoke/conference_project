@@ -15,6 +15,8 @@ def conference_list(request):
     ]
     return render(request, 'conference/conference_list.html', {'conferences': conferences})
 
+def conference_create(request):
+    return render(request, 'conference/conference_create.html')
 
 def conference_detail(request, conference_id):
     conferences = [
