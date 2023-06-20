@@ -2,7 +2,9 @@
 <h1>Conference List</h1>
 <ul>
     {% for conference in conferences %}
-    <li>{{ conference.name }} - {{ conference.dates }} - {{ conference.location }}</li>
+    <a href="{% url 'conference:conference_detail' conference.id %}">
+        <li>{{ conference.name }} - {{ conference.dates }} - {{ conference.location }}</li>
+    </a>
     <hr>
     {% endfor %}
 </ul>
