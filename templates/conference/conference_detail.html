@@ -5,3 +5,4 @@
 <p>Location: {{ conference.location }}</p>
 <p>Topics: {{ conference.topics }}</p>
 <!-- Add more details as required -->
+<a href="{% url 'conference:conference_update' conference.id %}" class="update-link">Update</a>

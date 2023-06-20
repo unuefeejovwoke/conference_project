@@ -39,3 +39,6 @@ def conference_detail(request, conference_id):
     return render(request, 'conference/conference_detail.html', {'conference': conference})
 
 
+def conference_update(request, conference_id):
+    conference = {'name': 'Conference 1', 'dates': 'June 1-3, 2023', 'location': 'City A', 'topics': 'Topic A, Topic B'}
+    return render(request, 'conference/conference_update.html', {'conference': conference})
