@@ -1,29 +1,61 @@
 <!-- conference/templates/conference/conference_list.html -->
 <style>
     /* CSS Stylesheet */
-.create-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
-}
+    .conference-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .conference-item {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #f9f9f9;
+    }
+  
+    .conference-item:hover {
+      background-color: #f1f1f1;
+    }
+  
+    .conference-details {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
 
-.create-button:hover {
-  background-color: #45a049;
-}
-
-</style>
-<h1>Conference List</h1>
-<ul>
+    .create-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+    
+      .create-button:hover {
+        background-color: #45a049;
+      }
+  </style>
+  
+  <h1>Conference List</h1>
+  <ul class="conference-list">
     {% for conference in conferences %}
     <a href="{% url 'conference:conference_detail' conference.id %}">
-        <li>{{ conference.name }} - {{ conference.dates }} - {{ conference.location }}</li>
+      <li class="conference-item">
+        <div class="conference-details">
+          <span>Name:</span> {{ conference.name }}
+        </div>
+        <div class="conference-details">
+          <span>Dates:</span> {{ conference.dates }}
+        </div>
+        <div class="conference-details">
+          <span>Location:</span> {{ conference.location }}
+        </div>
+      </li>
     </a>
-    <hr>
     {% endfor %}
-
-</ul>
-
-<a href="{% url 'conference:conference_create' %}" class="create-button">Create Conference</a>
+  </ul>
+  
+  <a href="{% url 'conference:conference_create' %}" class="create-button">Create Conference</a>
+  
